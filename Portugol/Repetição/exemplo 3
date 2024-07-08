@@ -1,0 +1,29 @@
+//Crie um algoritmo que imprima a tabuada de quaisquer números, sendo que esses são
+fornecidos pelo usuário, até encontrar como finalizador o número -1.
+
+programa
+{
+	
+	funcao inicio()
+	{
+		inteiro num, cont
+		escreva("Digite o número escolhido: ")
+		leia(num)
+		cont=1
+		enquanto(num!=-1 ){
+			enquanto(cont<=10){
+			escreva(num, " x ", cont, " = ", num*cont, "\n")
+			cont = cont + 1
+			}
+			
+			escreva("Digite o próximo número ou -1 para parar!: \n")
+			cont=1
+			leia(num)
+			limpa()	
+		
+		}	
+		se(num==-1){
+			escreva("O programa foi encerrado pelo usuário!")
+		}
+	}
+}
