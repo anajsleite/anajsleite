@@ -1,0 +1,35 @@
+programa
+{
+	
+	funcao inicio()
+	{
+		//somar todos os números ímpares e multiplos de 3 que estão entre 1 a 500
+
+		inteiro cont, acm
+		cont = 1
+		acm = 0
+		faca{
+			se(cont%2!=0 e cont%3==0){
+				acm = acm + cont
+				
+			}
+			cont = cont + 1
+		
+		} 
+		enquanto (cont<500)
+		
+		escreva("A soma de todos os números ímpares múltiplos de 3 de 1 a 500 é igual a: ",acm)
+
+	}
+}
+/* $$$ Portugol Studio $$$ 
+ * 
+ * Esta seção do arquivo guarda informações do Portugol Studio.
+ * Você pode apagá-la se estiver utilizando outro editor.
+ * 
+ * @POSICAO-CURSOR = 362; 
+ * @PONTOS-DE-PARADA = ;
+ * @SIMBOLOS-INSPECIONADOS = ;
+ * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
+ * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
+ */
