@@ -1,0 +1,63 @@
+
+
+programa
+{
+	inclua biblioteca Matematica --> mat
+	funcao inicio()
+	{
+		inteiro cont, t, r, b
+		real acmt, acmr, acmb
+		cadeia op
+		cont = 0
+		acmt = 0
+		acmr = 0
+		acmb = 0
+		escreva("Qual é o tipo do vinho?\nEscolha com base no menu: \n")
+		escreva("[T] TINTO;\n[B] BRANCO;\n[R] ROSÊ.\n[f] FIM DA CONTAGEM!\n")
+		leia(op)
+		// se ha a possibilidade de ser 0 entao enquanto
+		enquanto(op!="f"){
+			
+			escreva("Qual a quantidade do vinho?: ")
+			se(op=="t"){
+				leia(t)
+				acmt = acmt + t
+			}
+				senao
+					se(op=="b"){
+						leia(b)
+						acmb = acmb + b
+					}
+					senao{
+						se(op=="r"){
+						leia(r)
+						acmr = acmr + r
+						} 
+					}
+			se(acmt>0 ou acmr>0 ou acmb>0){
+				cont = acmt + acmb + acmr
+	
+			}
+			
+			se(op=="t" ou op== "b" ou op=="r"){
+			escreva("Qual o tipo do vinho?: ")
+			leia(op)
+			}
+			senao{
+				escreva("a quantidade final é: ")
+			}
+			
+		}
+				
+		se(cont==0){
+			escreva("Nenhum número foi inserido!")
+		}
+		senao{ 
+		escreva("A contagem foi finalizada!\n")
+		escreva("O total de vinhos no estoque é: ",cont,"\n")
+		escreva("A porcentagem equivalentes dos vinhos são: \n")
+		escreva("TINTO: ",mat.arredondar(acmt/cont*100,2),"%", " \nBRANCO: ", mat.arredondar(acmb/cont*100,2),"%", " \nROSÊ: ", mat.arredondar(acmr/cont*100,2),"%")
+		}
+		
+	}
+}
