@@ -3,6 +3,8 @@
 
 - 🌱 Atualmente estou aprendendo sobre **Python**
 
+- 🎓 Cursando Análise e Desenvolvimento de Sistemas na FATEC - FRANCA, previsão de conclusâo em julho/2026
+
 - 📫 Entre em contato por **Anaju060@gmail.com**
 
 
