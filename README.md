@@ -3,6 +3,8 @@
 
 - 🌱 Atualmente estou aprendendo sobre **Python**
 
+- 📚 Realizando o curso de Fundamentos de linguagem python para Análise de dados e data science
+
 - 🎓 Cursando Análise e Desenvolvimento de Sistemas na FATEC - FRANCA, previsão de conclusâo em julho/2026
 
 - 📫 Entre em contato por **Anaju060@gmail.com**
