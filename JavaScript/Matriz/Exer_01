@@ -1,1 +1,25 @@
-
+//Faça um programa que preencha uma matriz 3X5 com números inteiros, calcule e mostre a quantidade de elementos entre 15 e 20.
+function leituraMatriz(mat){
+    for(let i=0; i<3; i++){
+        mat[i]=[]
+        for(j=0; j<5; j++){
+            mat[i][j]= Number(prompt(`Informe o valor da posição ${i} ${j}`))
+        }
+    }
+}
+function calculaQtd1520(mat){
+    let qtd=0
+    for(let i=0; i<3; i++){
+        for(j=0; j<5; j++){
+            if(mat[i][j]>=15 && mat[i][j]<=20){
+                qtd++
+            }
+        }
+    }
+    alert(`A quantidade de elemento é ${qtd}`)
+}
+function principal(){
+    let mat=[]
+    leituraMatriz(mat)
+    calculaQtd1520(mat)
+}
