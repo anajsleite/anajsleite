@@ -1,0 +1,33 @@
+// Faça um programa que receba o total de vendas, o percentual de comissão
+//e os nomes de cada vendedor e os armazene cada um em um vetor; Calcule e mostre:
+//A)Um relatório com os nomes e os valores a receber; B)O total das vendas de todos os vendedores;
+//C)O maior valor e o menor valor a receber e de quem será;
+function exe2(){
+    let nomes = []
+    let vendas = []
+    let comissoes = []
+    let receber = []
+    for(let i=0;i<5;i++){
+        nomes.push(prompt(`Informe o nome do vendedor ${i+1}`))
+        vendas.push(Number(prompt(`Informe o total de vendas do vendedor ${i+1}`)))
+        comissoes.push(Number(prompt(`Informe a comissão do vendedor ${i+1}`)))
+    }
+    
+    for(let i=0;i<5;i++){
+        receber[i] = vendas[i] * comissoes[i]/100
+    }
+    let maiorReceber = receber[0]
+    let menorReceber = receber[0]
+    for(let i=1;i<5;i++){
+        if (receber[i] > maiorReceber){ // encontrei algo maior
+            maiorReceber = receber[i]
+        }
+        if (receber[i] < menorReceber){ // encontrei algo menor
+            menorReceber = receber[i] 
+        }
+    }
+    let nomeMaiorValor = nomes[receber.indexOf(maiorReceber)]
+    console.log(`Maior valor ${maiorReceber} e o nome do maior valor ${nomeMaiorValor}`)
+    let nomeMenorValor = nomes[receber.indexOf(menorReceber)]
+    console.log(`Menor valor ${menorReceber} e o nome do menor valor ${nomeMenorValor}`)
+}
