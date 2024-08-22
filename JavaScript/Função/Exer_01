@@ -1,1 +1,114 @@
+function cadastrarVendedor(vendas){
+    for(let i = 0; i < 4; i++){
+        let objeto = {
+            codigo: prompt(`Informe o código do ${i+1}° vendedor: `)
+        }
+        let existe = vendas.find((v) => v.codigo == objeto.codigo)
+        if(existe){
+            console.log(`Vendedor já cadastrado!`)
+        }
+        else{
+            vendas.push(objeto) 
+        }
+    }
+}
+function cadastrarVenda(vendas){
+    let objeto = {
+        codigo: prompt(`Informe o código do vendedor: `),
+        mes: prompt(`Informe o mês da venda: `),
+        valor: prompt(`Informe o valor da venda: `)
+    }
+    let existe = vendas.find((v) => v.codigo == codigo && v.mes == mes)
+    if(existe){
+        console.log(`Já existe venda para este vendedor no mês`)
+    }
+    else{
+        vendas.push(objeto)
+    }
+}
+function consultarVenda(vendas) {
+    let codigo = prompt(`Informe o código do vendedor: `)
+    let mes = prompt(`Informe o mês da venda: `)
+    let encontrada = vendas.find((v) => v.codigo == codigo && v.mes == mes)
+    if (encontrada) {
+        console.log(`O valor da venda é: ${encontrada.valor}`);
+    } else {
+        console.log(`Não há vendas para este vendedor no mês informado`);
+    }
+}
 
+function totalVendas(vendas) {
+    let codigo = prompt(`Informe o código do vendedor: `)
+    let totalVendas = 0
+    for (let i = 0; i < vend.length; i++) {
+        if (vendas[i].codigo == codigo) {
+            totalVendas += Number(vend[i].valor);
+        }
+    }
+    console.log(`O total de vendas do vendedor é: ${totalVendas}`);
+}
+
+function maisVendeu(vendas) {
+    let mes = prompt(`Informe o mês: `)
+    let max = 0
+    let vendedorMaisVendeu = ''
+    for (let i = 0; i < vendas.length; i++) {
+        if (vend[i].mes == mes && Number(vendas[i].valor) > max) {
+            max = Number(vendas[i].valor);
+            vendedorMaisVendeu = vendas[i].codigo;
+        }
+    }
+    if (vendedorMaisVendeu !== '') {
+        console.log(`O vendedor que mais vendeu no mês informado foi: ${vendedorMaisVendeu}`);
+    } else {
+        console.log(`Não há vendas no mês informado`);
+    }
+}
+
+function mesmaisVendas(vendas) {
+    let vendasMes = {}
+    for (let i = 0; i < vendas.length; i++) {
+        if (vendasMes[vendas[i].mes]) {
+            vendasMes[vendas[i].mes] += Number(vendas[i].valor);
+        } else {
+            vendasMes[vendas[i].mes] = Number(vendas[i].valor);
+        }
+    }
+    let max = 0
+    let mesComMaisVendas = ''
+    for (let mes = 1; mes <= 12; mes++) {
+        if (vendasMes[mes] && vendasMes[mes] > max) {
+            max = vendasMes[mes];
+            mesComMaisVendas = mes;
+        }
+    }
+    console.log(`O mês com mais vendas foi: ${mesComMaisVendas}`);
+}
+
+function principal(){
+    let vendedor = []
+    let vendas = []
+    let menu
+    do{
+        menu = Number(prompt("Informe a opção desejada:\n 1 - Cadastrar vendedor\n 2 - Cadastrar venda\n 3 - Consultar venda\n 4 - Consultar total\n 5 - Vendedor que mais vendeu\n 6 - Mês com mais venda\n 7 - Finalizar Programa"));
+        switch(menu){
+            case 1: cadastrarVendedor(vendedor)
+                break;
+            case 2: cadastrarVenda(vendas)
+                break;
+            case 3: consultarVenda(vendas)
+                break;
+            case 4: totalVendas(vendas)
+                break;
+            case 5: maisVendeu(vendas)
+                break;
+            case 6: mesmaisVendas(vendas)
+                break;
+            case 7: alert("Programa Finalizado");
+                break;
+            default: alert("Opção inválida, tente novamente");
+        }
+    }
+    while (menu != 7){
+    }
+}
