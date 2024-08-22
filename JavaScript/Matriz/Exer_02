@@ -1,0 +1,47 @@
+//Criar uma matriz 2x4 com números inteiros, calcular e mostrar: A) Quantidade de elementos entre 12 e 20 em cada linha e 
+//B) A média dos elementos pares da matriz
+function leituraMatriz(mat){
+    function leituraMatriz(mat){
+        for(let i=0; i<2; i++){
+            mat[i]=[]
+            for(j=0; j<4; j++){
+                mat[i][j]= Number(prompt(`Informe o valor da posição ${i} ${j}`))
+            }
+        }
+    }
+}
+
+function calculaQtd1220(mat){
+    let qtd
+    for(let i=0; i<2; i++){
+        qtd=0 //inicializa e zera cada vez p dar qtd por linha
+        for(j=0; j<4; j++){
+            if(mat[i][j]>=12 && mat[i][j]<=20){
+                qtd++
+            }
+        }
+    alert(`A quantidade de elemento na linha ${i+1} é ${qtd}`)//quantidade por linha dentro do for
+    }
+    
+}
+
+function calculaMediaPares(mat){
+    let soma=0
+    let qtd=0
+    for(let i=0; i<3; i++){
+        for(j=0; j<5; j++){
+            if(mat[i][j]%2==0){
+                soma=soma+mat[i][j]
+                qtd++
+            }
+        }
+    }
+    alert(`A média de pares é ${soma/qtd}`)
+}
+
+function principal(){
+    let mat = []
+    leituraMatriz(mat)
+    calculaQtd1220(mat)
+    calculaMediaPares(mat)
+}
